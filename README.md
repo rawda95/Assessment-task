@@ -14,7 +14,7 @@ profile/
 
 Reset password screenshot
 
-![alt text](media/image/email.png "Description goes here")
+![screenshot](Assessment-task/media/image/email .png?raw=true "Optional Title")
 
 
 ## file upload
