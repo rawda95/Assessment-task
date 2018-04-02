@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form id="form-container"  method="post" enctype="multipart/form-data" class="form-container"  action="{% url 'google-api:distance_matrix'%}">
+        {% csrf_token %}
+        <label for="origins">From: </label>
+        <input type="text" id="origins" name="origins" value="">
+        <label for="destinations">To: </label>
+        <input type="text" id="destinations" name="destinations" value="">
+        <button id="submit-btn">Submit</button>
+    </form>
+    {%if distance%}
+    <h4>    distance:
+       {{distance}}</h4>
+    {%endif%}
+
+ 
+</body>
+</html>

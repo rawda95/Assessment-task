@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block javascript %}
+ <script>
+    $("#id_username, #id_password2").each(function(){
+    $(this).change(function () {
+      var form = $(this).closest("form");
+      $.ajax({
+        url: form.attr("data-validate"),
+        data: form.serialize(),
+        dataType: 'json',
+        success: function (data) {
+          if  (data.notvalid) {
+          console.log('hi');
+
+            alert(data.error_message);
+          }
+        }
+      });
+    });
+    });
+  </script>
+{% endblock %}
+
+
+{% block content %}
+   <h2>Sign up</h2>
+  <form method="post" data-validate='{% url "UserLogin:validate_data" %}'>
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
+
+

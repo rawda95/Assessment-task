@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+home page
+{% if  logout %}
+<a href="{%url 'UserLogin:login_user'%}">
+    <button>Login</button></a>
+{%else%}
+<a href="{%url 'UserLogin:logout_user'%}">
+    <button>Logout</button></a>
+{%endif%}
+<a href="{%url 'UserLogin:signup'%}">
+    <button>SingUp</button></a>
+</body>
+</html>

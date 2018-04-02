@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <div class="row">
+                    <h3>Log In</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form  role="form" action="{% url 'UserLogin:login_user'%}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <label  for="id_username">
+                                Username:
+                            </label>
+                                <input  maxlength="30" name="username" type="text"> <br>
+                            <label class="control-label col-sm-2" for="id_password">
+                                Password:
+                            </label>
+                                <input id="id_password" maxlength="30" name="password" type="password"> <br>
+
+                                <button type="submit" class="btn btn-success">Submit</button>
+
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    Don't have an account? <a href="{% url 'UserLogin:signup' %}">Click here</a> to register. <br>
+                   Forget password? <a href="{% url 'UserLogin:password_reset' %}">Click here</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
