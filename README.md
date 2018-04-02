@@ -14,7 +14,7 @@ profile/
 
 Reset password screenshot
 
-![Alt text](/media/image/email.png")
+![Alt text](/media/image/email.png?raw=true "Title")
 
 ## file upload
 
@@ -22,7 +22,9 @@ upload/
 
 ## google maps API
 
-google-api/distance/
+google-api/
+
+distance/
 
 ## web services/AP
 
