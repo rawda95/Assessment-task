@@ -12,10 +12,6 @@ password_reset/
 
 profile/
 
-Reset password screenshot
-
-![Alt text](Assessment-task/media/image/email .png?raw=true "Optional Title")
-
 
 ## file upload
 
